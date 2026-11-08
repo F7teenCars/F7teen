@@ -10,7 +10,7 @@
 :root{--red:#e10600;--bg:#080808;--panel:#151515}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
 a{color:inherit;text-decoration:none}
 header{height:72px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#090909ed;border-bottom:1px solid #292929;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
 .logo{font-size:28px;font-weight:950;letter-spacing:3px}.logo span{color:var(--red)}
@@ -35,11 +35,10 @@ h1 span{color:var(--red)}
 .card{background:var(--panel);border:1px solid #292929;overflow:hidden;transition:.4s;opacity:0;transform:translateY(25px)}
 .card.show{opacity:1;transform:translateY(0)}
 .card:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 12px 35px #0009,0 0 15px #e1060020}
-.photo{height:180px;background:#202020;overflow:hidden;position:relative}
+.photo{height:180px;background:linear-gradient(145deg,#252525,#101010);overflow:hidden;position:relative}
 .photo img{width:100%;height:100%;object-fit:contain;padding:8px;transition:transform .6s}
 .card:hover .photo img{transform:scale(1.09)}
-.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent, #ffffff16,transparent);transform:translateX(-120%);transition:.7s}
-.card:hover .photo:after{transform:translateX(120%)}
+.photo .fallback{display:none;height:100%;align-items:center;justify-content:center;color:#aaa;font-size:12px;text-align:center;padding:12px}
 .info{padding:16px}
 .brand-name{font-size:18px;font-weight:900;min-height:25px}
 .price-label{font-size:10px;color:#888;letter-spacing:2px;text-transform:uppercase;margin-top:12px}
@@ -63,6 +62,7 @@ footer strong{font-size:21px;color:white;letter-spacing:3px}
 
 <script>
 const WHATSAPP_NUMBER="91XXXXXXXXXX";
+
 function wa(brand){
  const msg=`Hello F7TEEN! I would like to enquire about ${brand} diecast models and availability.`;
  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
@@ -92,7 +92,7 @@ function wa(brand){
 <h2>EXPLORE BRANDS</h2>
 <div class="sub">26 brands. Endless machines. One collection.</div>
 <div class="grid" id="brandGrid"></div>
-<p class="note">Prices are indicative starting-price references in INR and may vary by model, scale, seller and availability. Confirm current prices through WhatsApp. Images are illustrative collection photos and may not depict a specific model from each brand. Brand names and logos belong to their respective owners.</p>
+<p class="note">Photos are retrieved through brand-specific image searches and may vary. Prices are indicative starting-price references in INR and may change by model, scale, seller and availability. Confirm current prices through WhatsApp. Brand names and logos belong to their respective owners.</p>
 </section>
 
 <section class="section about" id="about">
@@ -112,54 +112,58 @@ function wa(brand){
 <a class="whatsapp" id="floatWA" href="#" target="_blank" aria-label="WhatsApp">✆</a>
 
 <script>
-const genericPhoto="https://evosparksdiecast.com/cdn/shop/files/Saf2640cc073545439c93746456a6a44ec.webp?v=1701056381";
-const bburagoPhoto="https://assets.jakespecial.com/content/2025/10/Sf5e659dda9544541a6ac0f544b884e5do-1.webp";
-const miniGTPhoto="https://down-id.img.susercontent.com/file/sg-11134201-81zvx-mijthpvg0dfma3";
-
 const brands=[
-["Hot Wheels",167,genericPhoto],
-["Matchbox",199,genericPhoto],
-["Majorette",899,genericPhoto],
-["Bburago",599,bburagoPhoto],
-["Maisto",745,genericPhoto],
-["Mini GT",1149,miniGTPhoto],
-["Tarmac Works",1499,genericPhoto],
-["Pop Race",1555,genericPhoto],
-["INNO64",1949,genericPhoto],
-["CCA",499,genericPhoto],
-["AUTOart",2849,genericPhoto],
-["Kyosho",1999,genericPhoto],
-["CMC",2999,genericPhoto],
-["Greenlight",749,genericPhoto],
-["Solido",1499,genericPhoto],
-["Welly",1799,genericPhoto],
-["BM Creations",1599,genericPhoto],
-["GCD Models",1899,genericPhoto],
-["Para64",1299,genericPhoto],
-["Tomica",662,genericPhoto],
-["Jada Toys",1799,genericPhoto],
-["M2 Machines",1099,genericPhoto],
-["IXO Models",2199,genericPhoto],
-["Minichamps",2199,genericPhoto],
-["LCD Models",2499,genericPhoto],
-["Schuco",1899,genericPhoto]
+["Hot Wheels",167,"Hot Wheels 1:64 diecast miniature car"],
+["Matchbox",199,"Matchbox 1:64 diecast miniature car"],
+["Majorette",899,"Majorette diecast miniature car"],
+["Bburago",599,"Bburago diecast model miniature car"],
+["Maisto",745,"Maisto diecast model miniature car"],
+["Mini GT",1149,"Mini GT 1:64 diecast model car"],
+["Tarmac Works",1499,"Tarmac Works 1:64 diecast model car"],
+["Pop Race",1555,"Pop Race 1:64 diecast model car"],
+["INNO64",1949,"INNO64 1:64 diecast model car"],
+["CCA",499,"CCA 1:64 diecast model car"],
+["AUTOart",2849,"AUTOart 1:18 diecast model car"],
+["Kyosho",1999,"Kyosho diecast miniature model car"],
+["CMC",2999,"CMC precision diecast model car"],
+["Greenlight",749,"Greenlight 1:64 diecast model car"],
+["Solido",1499,"Solido diecast miniature model car"],
+["Welly",1799,"Welly diecast miniature car"],
+["BM Creations",1599,"BM Creations 1:64 diecast model car"],
+["GCD Models",1899,"GCD Models 1:64 diecast model car"],
+["Para64",1299,"Para64 1:64 diecast model car"],
+["Tomica",662,"Tomica 1:64 diecast miniature car"],
+["Jada Toys",1799,"Jada Toys diecast model car"],
+["M2 Machines",1099,"M2 Machines 1:64 diecast model car"],
+["IXO Models",2199,"IXO Models diecast miniature car"],
+["Minichamps",2199,"Minichamps diecast model car"],
+["LCD Models",2499,"LCD Models 1:64 diecast miniature car"],
+["Schuco",1899,"Schuco diecast model miniature car"]
 ];
 
 const grid=document.getElementById("brandGrid");
-brands.forEach(([name,price,photo],i)=>{
+
+brands.forEach(([name,price,query],i)=>{
  const card=document.createElement("article");
  card.className="card";
- card.style.transitionDelay=(i%4)*70+"ms";
+ card.style.transitionDelay=(i%4)*65+"ms";
+
+ // A separate search query is generated for each brand.
+ const imageURL="https://tse1.mm.bing.net/th?q="+encodeURIComponent(query)+"&w=800&h=500&c=7&rs=1&p=0";
+
  card.innerHTML=`
  <div class="photo">
- <img src="${photo}" alt="Miniature diecast model car collection" loading="lazy">
+  <img src="${imageURL}" alt="${name} diecast miniature car" loading="lazy"
+   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="fallback">${name}<br>Photo unavailable</div>
  </div>
  <div class="info">
- <div class="brand-name">${name}</div>
- <div class="price-label">Starting price</div>
- <div class="price">₹${price.toLocaleString("en-IN")} <small>onwards</small></div>
- <a class="enquire" href="${wa(name)}" target="_blank" rel="noopener">✆ ENQUIRE ON WHATSAPP</a>
+  <div class="brand-name">${name}</div>
+  <div class="price-label">Starting price</div>
+  <div class="price">₹${price.toLocaleString("en-IN")} <small>onwards</small></div>
+  <a class="enquire" href="${wa(name)}" target="_blank" rel="noopener">✆ ENQUIRE ON WHATSAPP</a>
  </div>`;
+
  grid.appendChild(card);
 });
 
@@ -174,6 +178,7 @@ const observer=new IntersectionObserver(entries=>{
   }
  });
 },{threshold:.08});
+
 document.querySelectorAll(".card").forEach(card=>observer.observe(card));
 </script>
 </body>
