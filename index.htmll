@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F7TEEN | Collect Your Dream Machine</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.logo{font-size:27px;letter-spacing:5px;font-weight:bold}
+.logo span,h1 span{color:#e21b2d}
+nav a{color:#fff;text-decoration:none;margin:8px;font-size:12px}
+.hero{text-align:center;padding:100px 15px;background:radial-gradient(circle,#451018,#090909 70%)}
+.tag{color:#ff4655;letter-spacing:4px;font-size:12px}
+h1{font-size:clamp(42px,8vw,85px);line-height:1.05}
+.hero p,.muted{color:#aaa;line-height:1.8}
+.btn{display:inline-block;background:#e21b2d;color:white;padding:15px 25px;text-decoration:none;margin-top:20px}
+section{padding:65px 7%}
+h2{font-size:34px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:#151515;border:1px solid #333;padding:15px}
+.car{height:160px;background:linear-gradient(145deg,#333,#111);display:grid;place-items:center;font-size:55px}
+.card p{color:#aaa;font-size:13px}
+.card a{color:#ff4655;text-decoration:none}
+.story{background:#141414}
+.contact{text-align:center;background:#350b12}
+footer{text-align:center;padding:25px;color:#888;font-size:12px}
+@media(max-width:550px){header{padding:18px 4%}nav a{margin:4px;font-size:10px}section{padding:45px 5%}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">F7<span>TEEN</span></div>
+<nav>
+<a href="#home">HOME</a>
+<a href="#collection">SHOP</a>
+<a href="#about">ABOUT</a>
+<a href="#contact">CONTACT</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<div class="tag">PREMIUM DIECAST COLLECTIBLES</div>
+<h1>COLLECT YOUR<br><span>DREAM MACHINE.</span></h1>
+<p>Miniature legends. Automotive passion.<br>Welcome to the world of F7TEEN.</p>
+<a class="btn" href="#collection">EXPLORE COLLECTION</a>
+</div>
+
+<section id="collection">
+<div class="tag">THE COLLECTION</div>
+<h2>Find Your Dream Machine.</h2>
+<p class="muted">Discover miniature automotive icons.</p>
+<div class="products">
+<div class="card">
+<div class="car">🏎️</div>
+<h3>Lamborghini</h3>
+<p>Italian supercar legends.</p>
+<a href="#contact">ENQUIRE ↗</a>
+</div>
+<div class="card">
+<div class="car">🚘</div>
+<h3>BMW</h3>
+<p>Performance and precision.</p>
+<a href="#contact">ENQUIRE ↗</a>
+</div>
+<div class="card">
+<div class="car">🏎️</div>
+<h3>Ferrari</h3>
+<p>Racing heritage in miniature.</p>
+<a href="#contact">ENQUIRE ↗</a>
+</div>
+<div class="card">
+<div class="car">🚗</div>
+<h3>Porsche</h3>
+<p>Timeless automotive design.</p>
+<a href="#contact">ENQUIRE ↗</a>
+</div>
+</div>
+</section>
+
+<section class="story" id="about">
+<div class="tag">OUR IDENTITY</div>
+<h2>Welcome to F7TEEN.</h2>
+<p class="muted">F7TEEN is built for people who appreciate iconic cars and the art of diecast collecting. From legendary supercars to performance machines, we celebrate automotive passion in miniature.</p>
+<h3>SMALL MODELS. BIG DREAMS.</h3>
+</section>
+
+<section class="contact" id="contact">
+<h2>LET'S TALK CARS.</h2>
+<p>Find your next dream machine.</p>
+<a class="btn" href="https://www.instagram.com/f7teen.co/" target="_blank">FOLLOW @F7TEEN.CO</a>
+</section>
+
+<footer>
+F7TEEN © 2026 | COLLECT YOUR DREAM MACHINE.
+</footer>
+</body>
+</html>
