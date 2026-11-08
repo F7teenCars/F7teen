@@ -4,440 +4,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
 <title>F7TEEN | Collect Your Dream Machine</title>
-<meta name="description" content="F7TEEN - Diecast model cars for collectors. Collect Your Dream Machine.">
-
 <style>
-:root{
-  --red:#e10600;
-  --black:#080808;
-  --panel:#141414;
-  --silver:#bdbdbd;
-}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#e10600;--black:#090909;--panel:#151515;--muted:#999}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--black);
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
-}
-header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 7%;
-  background:rgba(5,5,5,.95);
-  border-bottom:1px solid #292929;
-  backdrop-filter:blur(12px);
-}
-.logo{
-  font-size:27px;
-  font-weight:900;
-  letter-spacing:4px;
-}
-.logo span{color:var(--red)}
-nav{display:flex;gap:25px}
-nav a{
-  color:#ddd;
-  text-decoration:none;
-  font-size:13px;
-  transition:.3s;
-}
+body{margin:0;background:var(--black);color:#fff;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#090909;border-bottom:1px solid #292929;position:sticky;top:0;z-index:10}
+.logo{font-size:29px;font-weight:950;letter-spacing:3px}.logo span{color:var(--red)}
+nav{display:flex;gap:28px;font-size:13px;text-transform:uppercase;letter-spacing:1px}
 nav a:hover{color:var(--red)}
-
-.hero{
-  min-height:570px;
-  display:flex;
-  align-items:center;
-  padding:80px 9%;
-  position:relative;
-  overflow:hidden;
-  background:
-  linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.55)),
-  url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85") center/cover;
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-100px;
-  bottom:-180px;
-  width:500px;
-  height:500px;
-  border:1px solid #e1060033;
-  border-radius:50%;
-  box-shadow:0 0 0 55px #e1060010,0 0 0 110px #e1060008;
-}
-.hero-content{
-  position:relative;
-  z-index:1;
-  max-width:650px;
-}
-.eyebrow{
-  color:var(--red);
-  letter-spacing:5px;
-  font-size:12px;
-  font-weight:bold;
-}
-.hero h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:1.02;
-  margin:20px 0;
-}
-.hero h1 span{color:var(--red)}
-.hero p{
-  color:#c4c4c4;
-  line-height:1.8;
-  max-width:480px;
-}
-.cta{
-  display:inline-block;
-  margin-top:28px;
-  padding:15px 27px;
-  background:var(--red);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  letter-spacing:1px;
-  transition:.3s;
-}
-.cta:hover{
-  background:#fff;
-  color:#111;
-  transform:translateY(-3px);
-}
-.shipping{
-  text-align:center;
-  padding:16px;
-  background:var(--red);
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-}
-section{padding:75px 7%}
-.section-heading{
-  text-align:center;
-  margin-bottom:42px;
-}
-.section-heading small{
-  color:var(--red);
-  letter-spacing:4px;
-  font-weight:bold;
-}
-.section-heading h2{
-  font-size:clamp(27px,4vw,40px);
-  margin-top:12px;
-}
-.section-heading p{
-  color:#999;
-  margin-top:12px;
-  font-size:14px;
-}
-.brand-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.brand-card{
-  background:var(--panel);
-  border:1px solid #292929;
-  overflow:hidden;
-  transition:transform .35s,border-color .35s;
-  opacity:0;
-  transform:translateY(22px);
-}
-.brand-card.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-.brand-card:hover{
-  border-color:var(--red);
-  transform:translateY(-6px);
-}
-.brand-photo{
-  height:155px;
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(135deg,#292929,#101010);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.brand-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .6s;
-}
-.brand-card:hover .brand-photo img{
-  transform:scale(1.07);
-}
-.photo-placeholder{
-  text-align:center;
-  color:#777;
-  font-size:12px;
-  letter-spacing:2px;
-}
-.photo-placeholder span{
-  display:block;
-  font-size:9px;
-  margin-top:8px;
-  color:#555;
-}
-.photo-label{
-  position:absolute;
-  bottom:10px;
-  left:12px;
-  color:#aaa;
-  background:#080808bb;
-  padding:5px 8px;
-  font-size:9px;
-  letter-spacing:2px;
-}
-.brand-info{padding:17px}
-.brand-info h3{
-  font-size:16px;
-  letter-spacing:1px;
-}
-.price{
-  color:var(--silver);
-  font-size:13px;
-  margin-top:10px;
-}
-.price strong{
-  color:white;
-  font-size:17px;
-}
-.enquire{
-  display:block;
-  margin-top:15px;
-  text-align:center;
-  padding:10px;
-  border:1px solid #444;
-  color:#fff;
-  text-decoration:none;
-  font-size:11px;
-  letter-spacing:1px;
-  transition:.3s;
-}
-.enquire:hover{
-  background:var(--red);
-  border-color:var(--red);
-}
-.about{
-  background:#101010;
-  text-align:center;
-}
-.about p{
-  max-width:700px;
-  margin:20px auto 0;
-  color:#aaa;
-  line-height:1.9;
-  font-size:15px;
-}
-.contact{text-align:center}
-.contact p{
-  color:#aaa;
-  margin-top:15px;
-}
-footer{
-  padding:30px 7%;
-  text-align:center;
-  background:#050505;
-  border-top:1px solid #252525;
-  color:#777;
-  font-size:12px;
-  line-height:2;
-}
-footer strong{
-  color:white;
-  letter-spacing:3px;
-}
-@media(max-width:900px){
-  .brand-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:600px){
-  header{padding:15px 5%}
-  .logo{font-size:22px}
-  nav{gap:12px}
-  nav a{font-size:11px}
-  .hero{min-height:480px;padding:65px 7%}
-  section{padding:60px 5%}
-  .brand-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:11px;
-  }
-  .brand-photo{height:120px}
-  .brand-info{padding:13px}
-  .brand-info h3{font-size:13px}
-  .price{font-size:11px}
-  .price strong{font-size:15px}
-}
-@media(max-width:360px){
-  nav{gap:8px}
-  nav a{font-size:10px}
-}
+.hero{min-height:490px;padding:90px 8%;display:flex;align-items:center;background:linear-gradient(90deg,#080808 5%,#080808e8 48%,#08080855),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:650px}
+.eyebrow{color:var(--red);font-size:12px;font-weight:bold;letter-spacing:4px}
+h1{font-size:clamp(44px,7vw,82px);line-height:.98;margin:20px 0;font-weight:950;letter-spacing:-3px}
+h1 span{color:var(--red)}
+.hero p{color:#bbb;font-size:16px;line-height:1.7;max-width:480px}
+.cta{display:inline-block;background:var(--red);padding:15px 25px;margin-top:18px;font-weight:bold;font-size:12px;letter-spacing:2px;transition:.25s}
+.cta:hover{background:#fff;color:#000;transform:translateY(-3px)}
+.section{padding:75px 7%}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.section-head h2{font-size:34px;margin:8px 0}
+.section-head p{color:var(--muted);font-size:13px}
+.line{height:3px;width:55px;background:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid #292929;overflow:hidden;transition:.3s;position:relative}
+.card:hover{transform:translateY(-7px);border-color:var(--red);box-shadow:0 15px 35px #0008}
+.photo{height:170px;background:linear-gradient(145deg,#242424,#101010);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:contain;padding:12px;transition:.5s}
+.card:hover .photo img{transform:scale(1.06)}
+.photo .placeholder{font-size:12px;color:#777;letter-spacing:2px;text-align:center;padding:15px}
+.info{padding:17px}
+.brand-logo{height:43px;display:flex;align-items:center;margin-bottom:12px}
+.brand-logo img{max-width:145px;max-height:38px;object-fit:contain;filter:brightness(0) invert(1)}
+.brand-name{font-size:18px;font-weight:900;letter-spacing:.3px}
+.price-label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:2px}
+.price{font-size:21px;font-weight:800;margin-top:5px}
+.price small{font-size:10px;color:#999;font-weight:400}
+.view{display:block;margin-top:15px;padding-top:12px;border-top:1px solid #303030;color:#bbb;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.view:hover{color:var(--red)}
+.note{color:#777;font-size:11px;line-height:1.6;margin-top:24px}
+.about{background:#111;border-top:1px solid #252525;border-bottom:1px solid #252525}
+.about-inner{max-width:850px;margin:auto;text-align:center}
+.about h2{font-size:36px;margin:15px 0}
+.about p{color:#aaa;line-height:1.8}
+footer{padding:35px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:#888;font-size:12px}
+footer strong{color:#fff;letter-spacing:3px;font-size:20px}
+footer a{color:#fff}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){header{padding:0 5%;height:65px}nav{gap:13px;font-size:10px}.logo{font-size:23px}.hero{min-height:430px;padding:65px 7%}.section{padding:55px 5%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.photo{height:130px}.info{padding:12px}.brand-name{font-size:15px}.price{font-size:18px}.section-head h2{font-size:27px}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">F7<span>TEEN</span></div>
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#brands">BRANDS</a>
-    <a href="#about">ABOUT</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
+<a class="logo" href="#">F7<span>TEEN</span></a>
+<nav>
+<a href="#brands">Brands</a>
+<a href="#about">About</a>
+<a href="https://www.instagram.com/f7teen.co/" target="_blank">Instagram</a>
+</nav>
 </header>
 
-<main>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">THE DIECAST COLLECTION</div>
-    <h1>COLLECT YOUR<br><span>DREAM MACHINE.</span></h1>
-    <p>
-      Discover the world of diecast model cars.
-      From everyday favourites to premium collector pieces,
-      find your next addition at F7TEEN.
-    </p>
-    <a class="cta" href="#brands">EXPLORE COLLECTION</a>
-  </div>
-</section>
-
-<div class="shipping">
-  F7TEEN · COLLECT YOUR DREAM MACHINE
+<section class="hero">
+<div class="hero-content">
+<div class="eyebrow">THE DIECAST COLLECTION</div>
+<h1>COLLECT YOUR<br><span>DREAM MACHINE.</span></h1>
+<p>Discover the world of miniature automotive legends. Explore diecast brands, find your favourites and build your collection.</p>
+<a class="cta" href="#brands">EXPLORE BRANDS ↗</a>
 </div>
-
-<section id="brands">
-  <div class="section-heading">
-    <small>THE COLLECTION</small>
-    <h2>EXPLORE OUR BRANDS</h2>
-    <p>Discover your favourite diecast brands.</p>
-  </div>
-
-  <div class="brand-grid" id="brandGrid"></div>
 </section>
 
-<section class="about" id="about">
-  <div class="section-heading">
-    <small>ABOUT F7TEEN</small>
-    <h2>MORE THAN JUST MODEL CARS.</h2>
-  </div>
-  <p>
-    F7TEEN is built for people who love automobiles
-    and the art of collecting. Explore diecast brands,
-    discover miniature machines and grow your collection
-    one car at a time.
-  </p>
+<section class="section" id="brands">
+<div class="section-head">
+<div>
+<div class="line"></div>
+<h2>EXPLORE BRANDS</h2>
+<p>26 brands. Endless machines. One collection.</p>
+</div>
+</div>
+<div class="grid" id="brandGrid"></div>
+<p class="note">Starting prices are indicative reference prices in INR and may vary by model, scale, seller and availability. Check the retailer for the current price. Brand logos and product images belong to their respective owners. F7TEEN is an independent collector-focused project and is not affiliated with these brands.</p>
 </section>
 
-<section class="contact" id="contact">
-  <div class="section-heading">
-    <small>GET IN TOUCH</small>
-    <h2>FIND YOUR NEXT MODEL.</h2>
-  </div>
-  <p>Questions about availability or pricing?</p>
-  <a class="cta"
-     href="https://www.instagram.com/f7teen.co/"
-     target="_blank"
-     rel="noopener">
-    MESSAGE US ON INSTAGRAM
-  </a>
-  <p style="font-size:13px;margin-top:18px">
-    Instagram: @f7teen.co
-  </p>
+<section class="section about" id="about">
+<div class="about-inner">
+<div class="eyebrow">ABOUT F7TEEN</div>
+<h2>MORE THAN A MODEL.<br><span style="color:#e10600">IT'S A PASSION.</span></h2>
+<p>F7TEEN is built for diecast collectors and automotive enthusiasts. From everyday favourites to premium miniature masterpieces, discover the brands that bring dream machines to life.</p>
+<a class="cta" href="https://www.instagram.com/f7teen.co/" target="_blank">FOLLOW @F7TEEN.CO</a>
+</div>
 </section>
-
-</main>
 
 <footer>
-  <strong>F7TEEN</strong><br>
-  COLLECT YOUR DREAM MACHINE.<br>
-  © 2026 F7TEEN. All rights reserved.
+<strong>F7TEEN</strong>
+<span>COLLECT YOUR DREAM MACHINE.</span>
+<a href="https://www.instagram.com/f7teen.co/" target="_blank">INSTAGRAM ↗</a>
+<span>© 2026 F7TEEN</span>
 </footer>
 
 <script>
 const brands = [
-  {name:"Hot Wheels",price:"₹167"},
-  {name:"Matchbox"},
-  {name:"Majorette"},
-  {name:"Bburago",price:"₹599"},
-  {name:"Maisto",price:"₹745"},
-  {name:"Mini GT",price:"₹1,149"},
-  {name:"Tarmac Works",price:"₹1,499"},
-  {name:"Pop Race"},
-  {name:"INNO64",price:"₹1,949"},
-  {name:"CCA"},
-  {name:"AUTOart"},
-  {name:"Kyosho"},
-  {name:"CMC"},
-  {name:"Greenlight"},
-  {name:"Solido"},
-  {name:"Welly"},
-  {name:"BM Creations"},
-  {name:"GCD Models"},
-  {name:"Para64"},
-  {name:"Tomica"},
-  {name:"Jada Toys"},
-  {name:"M2 Machines"},
-  {name:"IXO Models"},
-  {name:"Minichamps"},
-  {name:"LCD Models"},
-  {name:"Schuco"}
+["Hot Wheels",167,"hotwheels.com","Hot Wheels diecast car"],
+["Matchbox",199,"matchbox.com","Matchbox diecast miniature car"],
+["Majorette",899,"majorette.com","Majorette diecast car"],
+["Bburago",599,"bburago.com","Bburago diecast miniature car"],
+["Maisto",745,"maisto.com","Maisto diecast model car"],
+["Mini GT",1149,"minigt.tsm-models.com","Mini GT 1:64 diecast car"],
+["Tarmac Works",1499,"tarmacworks.com","Tarmac Works diecast car"],
+["Pop Race",1555,"poprace.jp","Pop Race 1:64 diecast car"],
+["INNO64",1949,"inno-models.com","INNO64 diecast car"],
+["CCA",499,"","CCA diecast model car"],
+["AUTOart",2849,"autoartmodels.com","AUTOart diecast model car"],
+["Kyosho",1999,"kyosho.com","Kyosho diecast miniature car"],
+["CMC",2999,"cmc-modelcars.de","CMC model car"],
+["Greenlight",749,"greenlighttoys.com","Greenlight diecast car"],
+["Solido",1499,"solido.com","Solido diecast model car"],
+["Welly",1799,"wellydiecast.com","Welly diecast car"],
+["BM Creations",1599,"bmcreations.com","BM Creations diecast car"],
+["GCD Models",1899,"","GCD Models diecast car"],
+["Para64",1299,"para64.com","Para64 miniature diecast car"],
+["Tomica",662,"takaratomy.co.jp","Tomica diecast miniature car"],
+["Jada Toys",1799,"jadatoys.com","Jada Toys diecast car"],
+["M2 Machines",1099,"m2machines.com","M2 Machines diecast car"],
+["IXO Models",2199,"ixomodels.com","IXO Models diecast car"],
+["Minichamps",2199,"minichamps.de","Minichamps diecast car"],
+["LCD Models",2499,"lcd-model.com","LCD Models diecast car"],
+["Schuco",1899,"schuco.de","Schuco diecast model car"]
 ];
 
-const grid=document.getElementById("brandGrid");
+const grid = document.getElementById("brandGrid");
 
-brands.forEach(brand=>{
-  const card=document.createElement("article");
-  card.className="brand-card";
+brands.forEach((b,i)=>{
+ const [name,price,domain,search] = b;
+ const card = document.createElement("article");
+ card.className="card reveal";
 
-  card.innerHTML=`
-    <div class="brand-photo">
-      <div class="photo-placeholder">
-        ${brand.name.toUpperCase()}
-        <span>DIECAST PHOTO</span>
-      </div>
-      <span class="photo-label">F7TEEN COLLECTION</span>
-    </div>
+ const logo = domain
+ ? `<img src="https://logo.clearbit.com/${domain}" alt="${name} logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-name" style="display:none">${name}</span>`
+ : `<span class="brand-name">${name}</span>`;
 
-    <div class="brand-info">
-      <h3>${brand.name}</h3>
-      <div class="price">
-        Starting from:
-        <strong>${brand.price || "Price coming soon"}</strong>
-      </div>
-      <a class="enquire"
-         href="https://www.instagram.com/f7teen.co/"
-         target="_blank"
-         rel="noopener">
-        ENQUIRE ON INSTAGRAM →
-      </a>
-    </div>
-  `;
-
-  grid.appendChild(card);
+ const photoSearch = "https://www.google.com/search?tbm=isch&q="+encodeURIComponent(search);
+ card.innerHTML=`
+ <a href="${photoSearch}" target="_blank" rel="noopener">
+ <div class="photo">
+ <div class="placeholder">VIEW DIECAST PHOTOS ↗</div>
+ </div></a>
+ <div class="info">
+ <div class="brand-logo">${logo}</div>
+ <div class="price-label">Starting price</div>
+ <div class="price">₹${price.toLocaleString("en-IN")} <small>onwards</small></div>
+ <a class="view" href="${photoSearch}" target="_blank" rel="noopener">Explore photos ↗</a>
+ </div>`;
+ grid.appendChild(card);
 });
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:0.12});
-
-document.querySelectorAll(".brand-card").forEach(card=>{
-  observer.observe(card);
-});
+const observer = new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("show");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
-
 </body>
 </html>
