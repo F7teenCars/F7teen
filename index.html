@@ -3,582 +3,179 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<title>F7TEEN | Collect Your Dream Machine</title>
-<meta name="description" content="Explore premium miniature diecast cars at F7TEEN. Collect your dream machine.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>F7TEEN | Diecast Collection</title>
+<meta name="theme-color" content="#080808">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --red:#e50920;
-  --red2:#ff263e;
-  --bg:#080808;
-  --panel:#111214;
-  --panel2:#17181b;
-  --text:#f5f5f5;
-  --muted:#999;
-  --line:rgba(255,255,255,.09);
-}
+:root{--red:#ed1029;--bg:#080808;--panel:#141416;--line:#303034}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:"DM Sans",sans-serif;
-  overflow-x:hidden;
-}
-body:before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;z-index:-1;
-  background:
-    radial-gradient(ellipse at 10% 10%,rgba(229,9,32,.12),transparent 35%),
-    radial-gradient(ellipse at 90% 55%,rgba(229,9,32,.07),transparent 30%);
-}
-a{color:inherit;text-decoration:none}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:white;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
 button,input{font:inherit}
-button{cursor:pointer}
-.container{width:min(1200px,92%);margin:auto}
-
-/* NAVIGATION */
-.nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(7,7,7,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
-}
-.logo{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:35px;font-weight:900;letter-spacing:2px;
-}
+.wrap{width:min(1250px,94%);margin:auto}
+nav{height:76px;position:sticky;top:0;z-index:20;background:#090909ed;backdrop-filter:blur(15px);border-bottom:1px solid #292929}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font:900 36px "Barlow Condensed";letter-spacing:1px}
 .logo span{color:var(--red)}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{
-  color:#ccc;font-size:13px;font-weight:700;
-  transition:.25s;
-}
-.nav-links a:hover{color:var(--red2)}
-.nav-cta{
-  background:var(--red);padding:12px 18px;border-radius:4px;
-  font-size:12px;font-weight:800;letter-spacing:1px;
-  transition:.25s;
-}
-.nav-cta:hover{background:#ff3047;transform:translateY(-2px)}
-.menu-btn{display:none;background:none;color:white;border:0;font-size:26px}
-
-/* HERO */
-.hero{
-  min-height:620px;display:flex;align-items:center;
-  position:relative;overflow:hidden;
-  border-bottom:1px solid var(--line);
-}
-.hero:before{
-  content:"";position:absolute;inset:0;
-  background:
-   linear-gradient(90deg,#080808 5%,rgba(8,8,8,.92) 42%,rgba(8,8,8,.25)),
-   repeating-linear-gradient(120deg,transparent 0 70px,rgba(255,255,255,.025) 71px 72px);
-}
-.hero:after{
-  content:"";position:absolute;width:600px;height:600px;
-  border:1px solid rgba(229,9,32,.18);border-radius:50%;
-  right:-100px;top:0;
-  box-shadow:0 0 0 45px rgba(229,9,32,.025),0 0 0 90px rgba(229,9,32,.02);
-  animation:orbit 24s linear infinite;
-}
-.hero-content{position:relative;z-index:2;padding:90px 0;max-width:720px}
-.eyebrow{
-  color:var(--red2);font-size:11px;font-weight:800;
-  letter-spacing:4px;text-transform:uppercase;margin-bottom:22px;
-}
-.hero h1{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:clamp(65px,10vw,118px);
-  line-height:.86;letter-spacing:-2px;text-transform:uppercase;
-}
-.hero h1 span{
-  display:block;color:var(--red);
-  text-shadow:0 0 35px rgba(229,9,32,.25);
-}
-.hero p{
-  color:#b6b6b6;max-width:490px;line-height:1.8;
-  margin:28px 0 32px;font-size:15px;
-}
-.hero-buttons{display:flex;gap:13px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:15px 23px;border-radius:3px;
-  font-size:12px;font-weight:800;letter-spacing:1px;
-  transition:.3s;border:1px solid transparent;
-}
-.btn-red{background:var(--red)}
-.btn-red:hover{background:#ff3047;transform:translateY(-3px);box-shadow:0 12px 30px #e5092038}
-.btn-outline{border-color:#555;color:white}
-.btn-outline:hover{border-color:var(--red);color:var(--red2)}
-.hero-tag{
-  margin-top:55px;color:#777;font-size:10px;
-  letter-spacing:3px;font-weight:700;
-}
-
-/* MOVING STRIP */
-.ticker{
-  overflow:hidden;background:var(--red);color:white;
-  padding:13px 0;white-space:nowrap;
-}
-.ticker-track{
-  display:inline-flex;gap:55px;
-  animation:ticker 28s linear infinite;
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:17px;font-weight:800;letter-spacing:2px;
-}
-
-/* SECTION HEADINGS */
-.section{padding:90px 0}
-.section-head{
-  display:flex;justify-content:space-between;
-  align-items:end;gap:25px;margin-bottom:35px;
-}
-.kicker{
-  color:var(--red2);font-size:10px;font-weight:800;
-  letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;
-}
-.section h2{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:clamp(38px,6vw,58px);
-  text-transform:uppercase;line-height:1;
-}
-.section-desc{color:var(--muted);font-size:13px;line-height:1.7;max-width:390px}
-
-/* SEARCH AND FILTERS */
-.toolbar{
-  display:flex;gap:12px;flex-wrap:wrap;
-  margin-bottom:28px;align-items:center;
-}
-.search{
-  flex:1;min-width:220px;background:#141518;
-  color:white;border:1px solid var(--line);
-  padding:14px 16px;border-radius:3px;outline:none;
-}
+.links{display:flex;gap:30px;font-size:13px;font-weight:800}
+.links a:hover{color:var(--red)}
+.navbtn,.btn{background:var(--red);padding:13px 20px;font-weight:800;font-size:12px;border:0;color:white;display:inline-block;transition:.25s}
+.navbtn:hover,.btn:hover{background:#ff4054;transform:translateY(-3px)}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{min-height:650px;position:relative;display:flex;align-items:center;overflow:hidden;background:#080808}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080808 0%,#080808ed 35%,#08080840 100%),url("f7teen-hero.png") center right/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,#ed10291a 50%,transparent 65%);animation:shine 7s infinite}
+.hero-content{position:relative;z-index:2;padding:95px 0;max-width:680px}
+.kicker{font-size:11px;letter-spacing:4px;color:#ff3349;font-weight:900;margin-bottom:20px}
+h1{font:900 clamp(65px,9vw,112px)/.85 "Barlow Condensed";text-transform:uppercase;letter-spacing:-2px}
+h1 span{display:block;color:var(--red);margin-top:12px}
+.hero p{color:#c4c4c4;line-height:1.8;margin:28px 0;max-width:510px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.outline{border:1px solid #777;padding:13px 20px;font-size:12px;font-weight:800}
+.outline:hover{border-color:var(--red);color:#ff5264}
+.hero-note{margin-top:45px;color:#888;font-size:10px;letter-spacing:4px;font-weight:800}
+.ticker{background:var(--red);overflow:hidden;padding:13px 0;white-space:nowrap;font:800 16px "Barlow Condensed";letter-spacing:2px}
+.ticker div{display:inline-block;animation:scroll 30s linear infinite}
+.ticker span{margin:0 35px}
+section{padding:75px 0}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+h2{font:900 clamp(38px,6vw,60px)/.95 "Barlow Condensed";text-transform:uppercase}
+.desc{max-width:380px;color:#999;font-size:13px;line-height:1.7}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.search{flex:1;min-width:200px;padding:14px;background:#151515;border:1px solid #393939;color:white;outline:0}
 .search:focus{border-color:var(--red)}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filter{
-  background:#151619;color:#aaa;border:1px solid var(--line);
-  padding:12px 15px;border-radius:3px;font-size:11px;
-  font-weight:800;transition:.25s;
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{background:#171719;color:#bbb;border:1px solid #383838;padding:12px 16px;font-size:11px;font-weight:800}
+.filter.active,.filter:hover{background:var(--red);color:white;border-color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.card{background:linear-gradient(145deg,#19191b,#0d0d0e);border:1px solid #303034;overflow:hidden;transition:.35s;opacity:0;transform:translateY(20px)}
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-7px);border-color:var(--red);box-shadow:0 12px 30px #ed102922}
+.visual{height:145px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 90%,#ed102933,transparent 65%),linear-gradient(145deg,#242426,#0a0a0b)}
+.visual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 20px,#ffffff08 21px 22px)}
+.brandlogo{position:absolute;top:10px;z-index:2;font:900 18px "Barlow Condensed";letter-spacing:1px;text-shadow:0 2px 5px black}
+.car{width:82%;position:relative;z-index:1;filter:drop-shadow(0 9px 5px #000);transition:.45s}
+.card:hover .car{transform:scale(1.09) translateY(-4px)}
+.car svg{width:100%;height:auto;display:block}
+.info{padding:12px}
+.info h3{font:800 22px "Barlow Condensed";text-transform:uppercase;min-height:27px}
+.type{font-size:9px;color:#ff5365;letter-spacing:2px;font-weight:800}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:12px}
+.price{font-size:11px;color:#bbb}
+.price b{display:block;color:white;font-size:13px}
+.enquire{font-size:10px;font-weight:900;background:var(--red);padding:9px 10px;white-space:nowrap}
+.enquire:hover{background:#ff4054}
+.about{background:linear-gradient(110deg,#171719,#090909);border-block:1px solid #282828}
+.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.brandmark{height:270px;display:grid;place-items:center;border:1px solid #63101b;background:radial-gradient(circle,#ed102933,transparent 65%);font:900 90px "Barlow Condensed"}
+.brandmark span{color:var(--red)}
+.about p{color:#aaa;line-height:1.9;font-size:14px;margin-top:20px}
+.stats{display:flex;gap:35px;margin-top:28px;flex-wrap:wrap}
+.stats b{display:block;color:var(--red);font:900 40px "Barlow Condensed"}
+.stats small{font-size:10px;color:#aaa}
+.cta{text-align:center;background:radial-gradient(ellipse,#4a0912 0%,#080808 70%)}
+.cta p{color:#aaa;margin:18px 0 25px}
+footer{border-top:1px solid #292929;padding:28px 0;color:#888;font-size:11px}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:center}
+.wa{position:fixed;right:20px;bottom:20px;z-index:25;width:58px;height:58px;border-radius:50%;background:#20c96b;color:#061b0e;display:grid;place-items:center;font-size:25px;font-weight:900;box-shadow:0 0 25px #20c96b55;animation:pulse 2s infinite}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.show{opacity:1;transform:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@keyframes pulse{50%{box-shadow:0 0 0 10px #20c96b20,0 0 30px #20c96b88}}
+@keyframes shine{0%,65%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(max-width:950px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){
+ .links{display:none;position:absolute;top:76px;left:0;right:0;background:#101010;padding:25px;flex-direction:column}
+ .links.open{display:flex}.menu{display:block}.navbtn{display:none}
+ .hero{min-height:610px}.hero:before{background:linear-gradient(90deg,#080808ed,#080808a0),url("f7teen-hero.png") center/cover}
+ .hero-content{padding:85px 0}.heading{display:block}.desc{margin-top:15px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .visual{height:125px}.info{padding:10px}.info h3{font-size:20px}
+ .bottom{align-items:flex-start;flex-direction:column}.enquire{width:100%;text-align:center}
+ .aboutgrid{grid-template-columns:1fr}.brandmark{height:200px;font-size:70px}
+ section{padding:60px 0}
 }
-.filter.active,.filter:hover{
-  background:var(--red);border-color:var(--red);color:white;
-}
-
-/* BRAND CARDS */
-.brand-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:17px;
-}
-.brand-card{
-  background:linear-gradient(145deg,#17181b,#0e0f10);
-  border:1px solid var(--line);border-radius:5px;
-  overflow:hidden;position:relative;
-  transition:transform .35s,border-color .35s,box-shadow .35s;
-  opacity:0;transform:translateY(24px);
-}
-.brand-card.visible{opacity:1;transform:translateY(0)}
-.brand-card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(229,9,32,.7);
-  box-shadow:0 20px 45px rgba(0,0,0,.4),0 0 25px rgba(229,9,32,.08);
-}
-.brand-image{
-  height:175px;position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  background:
-   radial-gradient(ellipse at 50% 90%,rgba(229,9,32,.22),transparent 60%),
-   linear-gradient(135deg,#202125,#0b0c0e);
-  border-bottom:1px solid var(--line);
-}
-.brand-image:before{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.025) 23px 24px);
-}
-.brand-image img{
-  width:100%;height:100%;object-fit:cover;
-  position:absolute;inset:0;z-index:2;
-  transition:transform .6s;
-}
-.brand-card:hover .brand-image img{transform:scale(1.08)}
-.image-placeholder{
-  position:relative;z-index:1;text-align:center;
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:44px;font-weight:900;color:rgba(255,255,255,.12);
-  letter-spacing:3px;
-}
-.image-placeholder small{
-  display:block;font-family:"DM Sans",sans-serif;
-  font-size:8px;letter-spacing:3px;color:#777;
-}
-.brand-info{padding:17px}
-.brand-category{
-  color:var(--red2);font-size:9px;font-weight:800;
-  letter-spacing:2px;text-transform:uppercase;
-}
-.brand-info h3{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:25px;text-transform:uppercase;margin:7px 0;
-}
-.brand-bottom{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:8px;margin-top:17px;
-}
-.price{font-size:12px;color:#bbb}
-.price strong{display:block;color:white;font-size:15px}
-.enquire{
-  background:var(--red);border:0;color:white;
-  padding:10px 12px;border-radius:3px;
-  font-size:10px;font-weight:800;letter-spacing:.5px;
-  transition:.25s;
-}
-.enquire:hover{background:#ff3047;transform:scale(1.04)}
-.no-results{grid-column:1/-1;text-align:center;padding:50px;color:#888}
-
-/* ABOUT */
-.about{
-  background:linear-gradient(120deg,#141416,#0b0b0c);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.about-mark{
-  min-height:300px;display:flex;align-items:center;justify-content:center;
-  border:1px solid rgba(229,9,32,.3);
-  background:radial-gradient(circle,rgba(229,9,32,.16),transparent 65%);
-}
-.about-mark span{
-  font-family:"Barlow Condensed",sans-serif;font-size:100px;
-  font-weight:900;letter-spacing:7px;
-  text-shadow:0 0 45px rgba(229,9,32,.25);
-}
-.about-mark b{color:var(--red)}
-.about-copy p{color:#aaa;line-height:1.9;font-size:14px;margin-top:20px}
-.stats{display:flex;gap:35px;margin-top:30px;flex-wrap:wrap}
-.stat strong{
-  display:block;font-family:"Barlow Condensed",sans-serif;
-  font-size:38px;color:var(--red);
-}
-.stat span{font-size:10px;color:#888;letter-spacing:1px}
-
-/* CTA */
-.cta{
-  text-align:center;padding:90px 20px;
-  background:radial-gradient(ellipse at center,rgba(229,9,32,.14),transparent 65%);
-}
-.cta h2{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:clamp(42px,7vw,72px);text-transform:uppercase;
-}
-.cta p{color:#999;margin:15px 0 28px;font-size:14px}
-
-/* FOOTER */
-footer{border-top:1px solid var(--line);padding:30px 0}
-.footer-inner{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:20px;flex-wrap:wrap;
-}
-.footer-copy{color:#777;font-size:11px;line-height:1.8}
-.footer-brand{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:900}
-.footer-brand span{color:var(--red)}
-.footer-link{color:#bbb;font-size:12px}
-.footer-link:hover{color:var(--red)}
-
-/* WHATSAPP FLOAT */
-.whatsapp{
-  position:fixed;right:22px;bottom:22px;z-index:90;
-  width:57px;height:57px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:#20c66b;color:#071b0f;font-size:25px;
-  font-weight:900;box-shadow:0 5px 25px #20c66b44;
-  animation:pulse 2s infinite;
-  transition:.25s;
-}
-.whatsapp:hover{transform:scale(1.12)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@keyframes ticker{to{transform:translateX(-50%)}}
-@keyframes orbit{to{transform:rotate(360deg)}}
-@keyframes pulse{
-  0%,100%{box-shadow:0 5px 25px #20c66b44}
-  50%{box-shadow:0 5px 35px #20c66b88,0 0 0 9px #20c66b16}
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
- .brand-grid{grid-template-columns:repeat(3,1fr)}
- .about-grid{gap:25px}
-}
-@media(max-width:650px){
- .nav-inner{min-height:65px}
- .nav-links{
-   display:none;position:absolute;top:65px;left:0;right:0;
-   background:#101012;padding:22px;flex-direction:column;
-   align-items:flex-start;border-bottom:1px solid var(--line);
- }
- .nav-links.open{display:flex}
- .menu-btn{display:block}
- .nav-cta{display:none}
- .hero{min-height:560px}
- .hero-content{padding:75px 0}
- .section{padding:65px 0}
- .section-head{display:block}
- .section-desc{margin-top:15px}
- .brand-grid{grid-template-columns:repeat(2,1fr);gap:10px}
- .brand-image{height:130px}
- .brand-info{padding:12px}
- .brand-info h3{font-size:21px}
- .brand-bottom{align-items:flex-start;flex-direction:column}
- .enquire{width:100%}
- .about-grid{grid-template-columns:1fr}
- .about-mark{min-height:210px}
- .about-mark span{font-size:75px}
- .stats{gap:25px}
-}
-@media(max-width:360px){
- .brand-grid{grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{
-  scroll-behavior:auto!important;animation:none!important;
-  transition:none!important;
- }
- .reveal,.brand-card{opacity:1;transform:none}
-}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.card,.reveal{opacity:1;transform:none}}
 </style>
 </head>
-
 <body>
+<nav><div class="wrap nav">
+<a class="logo" href="#">F7<span>TEEN</span></a>
+<div class="links" id="links"><a href="#home">HOME</a><a href="#brands">BRANDS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
+<a class="navbtn" href="#brands">EXPLORE COLLECTION ↗</a>
+<button class="menu" id="menu" aria-label="Menu">☰</button>
+</div></nav>
 
-<header class="nav">
- <div class="container nav-inner">
-  <a class="logo" href="#">F7<span>TEEN</span></a>
-  <nav class="nav-links" id="navLinks">
-   <a href="#home">HOME</a>
-   <a href="#brands">BRANDS</a>
-   <a href="#about">ABOUT</a>
-   <a href="#contact">CONTACT</a>
-  </nav>
-  <a class="nav-cta" href="#brands">EXPLORE COLLECTION</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
- </div>
-</header>
+<header class="hero" id="home"><div class="wrap hero-content">
+<div class="kicker">THE DIECAST COLLECTION</div>
+<h1>COLLECT YOUR <span>DREAM MACHINE.</span></h1>
+<p>Discover the world of miniature automotive legends. Explore iconic diecast brands and find the next machine for your collection.</p>
+<div class="actions"><a class="btn" href="#brands">EXPLORE BRANDS →</a><a class="outline" href="#about">DISCOVER F7TEEN</a></div>
+<div class="hero-note">PRECISION • PASSION • COLLECTION</div>
+</div></header>
 
-<main>
-<section class="hero" id="home">
- <div class="container hero-content">
-  <div class="eyebrow">THE DIECAST COLLECTION</div>
-  <h1>COLLECT YOUR <span>DREAM MACHINE.</span></h1>
-  <p>Discover the world of miniature automotive legends. Explore iconic diecast brands and find the next machine for your collection.</p>
-  <div class="hero-buttons">
-   <a class="btn btn-red" href="#brands">EXPLORE BRANDS ↗</a>
-   <a class="btn btn-outline" href="#about">DISCOVER F7TEEN</a>
-  </div>
-  <div class="hero-tag">PRECISION • PASSION • COLLECTION</div>
- </div>
+<div class="ticker"><div>
+<span>F7TEEN — COLLECT YOUR DREAM MACHINE</span> • <span>PREMIUM DIECAST COLLECTION</span> • <span>BUILT FOR COLLECTORS</span> • <span>F7TEEN — COLLECT YOUR DREAM MACHINE</span> • <span>PREMIUM DIECAST COLLECTION</span> • <span>BUILT FOR COLLECTORS</span> •
+</div></div>
+
+<section class="wrap" id="brands">
+<div class="heading reveal"><div><div class="kicker">THE COLLECTION</div><h2>EXPLORE 38+ BRANDS</h2></div><p class="desc">From pocket-sized classics to detailed collector models. Find your next miniature machine.</p></div>
+<div class="toolbar reveal"><input class="search" id="search" placeholder="⌕  Search diecast brands..."><div class="filters">
+<button class="filter active" data-cat="all">ALL</button><button class="filter" data-cat="budget">BUDGET</button><button class="filter" data-cat="collector">COLLECTOR</button><button class="filter" data-cat="premium">PREMIUM</button>
+</div></div>
+<div class="grid" id="grid"></div>
 </section>
 
-<div class="ticker">
- <div class="ticker-track">
-  <span>F7TEEN — COLLECT YOUR DREAM MACHINE</span>
-  <span>• PREMIUM DIECAST COLLECTION</span>
-  <span>• BUILT FOR COLLECTORS</span>
-  <span>• F7TEEN — COLLECT YOUR DREAM MACHINE</span>
-  <span>• PREMIUM DIECAST COLLECTION</span>
-  <span>• BUILT FOR COLLECTORS</span>
- </div>
-</div>
+<section class="about" id="about"><div class="wrap aboutgrid">
+<div class="brandmark reveal">F7<span>TEEN</span></div>
+<div class="reveal"><div class="kicker">BEHIND THE COLLECTION</div><h2>MORE THAN<br>JUST MINIATURES.</h2><p>F7TEEN is built around the passion for miniature automotive collectibles. Explore iconic brands, discover detailed models and grow a collection that reflects your love for cars.</p>
+<div class="stats"><div><b>38+</b><small>BRANDS</small></div><div><b>1:64</b><small>COLLECTOR SCALE</small></div><div><b>∞</b><small>PASSION</small></div></div>
+</div></div></section>
 
-<section class="section container" id="brands">
- <div class="section-head reveal">
-  <div>
-   <div class="kicker">THE COLLECTION</div>
-   <h2>EXPLORE THE BRANDS</h2>
-  </div>
-  <p class="section-desc">From pocket-sized classics to detailed collector models, explore our growing brand selection.</p>
- </div>
-
- <div class="toolbar reveal">
-  <input class="search" id="searchInput" type="search" placeholder="Search diecast brands..." aria-label="Search brands">
-  <div class="filters">
-   <button class="filter active" data-filter="all">ALL</button>
-   <button class="filter" data-filter="budget">BUDGET</button>
-   <button class="filter" data-filter="collector">COLLECTOR</button>
-   <button class="filter" data-filter="premium">PREMIUM</button>
-  </div>
- </div>
-
- <div class="brand-grid" id="brandGrid"></div>
-</section>
-
-<section class="section about" id="about">
- <div class="container about-grid">
-  <div class="about-mark reveal"><span>F7<b>TEEN</b></span></div>
-  <div class="about-copy reveal">
-   <div class="kicker">BEHIND THE COLLECTION</div>
-   <h2>MORE THAN<br>JUST MINIATURES.</h2>
-   <p>F7TEEN is built around the passion for miniature automotive collectibles. Discover different brands, explore detailed models and grow a collection that reflects your love for cars.</p>
-   <div class="stats">
-    <div class="stat"><strong>38+</strong><span>BRANDS</span></div>
-    <div class="stat"><strong>1:64</strong><span>COLLECTOR SCALE</span></div>
-    <div class="stat"><strong>∞</strong><span>PASSION</span></div>
-   </div>
-  </div>
- </div>
-</section>
-
-<section class="cta" id="contact">
- <div class="kicker">YOUR NEXT MODEL AWAITS</div>
- <h2>START YOUR COLLECTION.</h2>
- <p>Have a model in mind? Contact F7TEEN for an enquiry.</p>
- <a class="btn btn-red" id="mainWhatsapp" href="#">ENQUIRE ON WHATSAPP ↗</a>
-</section>
-</main>
-
-<footer>
- <div class="container footer-inner">
-  <div>
-   <div class="footer-brand">F7<span>TEEN</span></div>
-   <div class="footer-copy">COLLECT YOUR DREAM MACHINE.</div>
-  </div>
-  <div class="footer-copy">© <span id="year"></span> F7TEEN. ALL RIGHTS RESERVED.</div>
-  <a class="footer-link" href="#home">BACK TO TOP ↑</a>
- </div>
-</footer>
-
-<a class="whatsapp" id="floatingWhatsapp" href="#" aria-label="WhatsApp enquiry">W</a>
+<section class="cta" id="contact"><div class="wrap reveal"><div class="kicker">YOUR NEXT MODEL AWAITS</div><h2>START YOUR COLLECTION.</h2><p>Have a model in mind? Contact F7TEEN for an enquiry.</p><a class="btn" id="mainwa" href="#">ENQUIRE ON WHATSAPP ↗</a></div></section>
+<footer><div class="wrap foot"><div><div class="logo">F7<span>TEEN</span></div>COLLECT YOUR DREAM MACHINE.</div><div>© <span id="year"></span> F7TEEN</div><a href="#home">BACK TO TOP ↑</a></div></footer>
+<a class="wa" id="floatwa" href="#" aria-label="WhatsApp">W</a>
 
 <script>
-/* CHANGE THIS TO YOUR WHATSAPP NUMBER.
-   Include country code. No + sign or spaces. */
-const WHATSAPP_NUMBER = "91XXXXXXXXXX";
-
-const brands = [
- ["Hot Wheels","Budget","₹167","budget","HW"],
- ["Matchbox","Budget","Ask for price","budget","MB"],
- ["Majorette","Budget","Ask for price","budget","MJ"],
- ["Bburago","Collector","₹599","collector","BB"],
- ["Maisto","Collector","₹745","collector","MA"],
- ["Mini GT","Collector","₹1,149","collector","GT"],
- ["Tarmac Works","Collector","₹1,499","collector","TW"],
- ["Pop Race","Collector","Ask for price","collector","PR"],
- ["INNO64","Collector","₹1,949","collector","IN"],
- ["Time Micro","Collector","Ask for price","collector","TM"],
- ["Era Car","Collector","Ask for price","collector","EC"],
- ["Tiny","Budget","Ask for price","budget","TN"],
- ["Tomica","Budget","Ask for price","budget","TO"],
- ["Greenlight","Collector","Ask for price","collector","GL"],
- ["Solido","Collector","Ask for price","collector","SO"],
- ["Welly","Budget","Ask for price","budget","WE"],
- ["Jada Toys","Collector","Ask for price","collector","JD"],
- ["M2 Machines","Collector","Ask for price","collector","M2"],
- ["AUTOart","Premium","Ask for price","premium","AA"],
- ["Kyosho","Premium","Ask for price","premium","KY"],
- ["CMC","Premium","Ask for price","premium","CM"],
- ["Minichamps","Premium","Ask for price","premium","MC"],
- ["LCD Models","Premium","Ask for price","premium","LCD"],
- ["Schuco","Premium","Ask for price","premium","SC"],
- ["Norev","Collector","Ask for price","collector","NO"],
- ["Spark","Premium","Ask for price","premium","SP"],
- ["BBR Models","Premium","Ask for price","premium","BBR"],
- ["GT Spirit","Premium","Ask for price","premium","GTS"],
- ["Almost Real","Premium","Ask for price","premium","AR"],
- ["TSM Models","Premium","Ask for price","premium","TSM"],
- ["KK-Scale","Collector","Ask for price","collector","KK"],
- ["OttOmobile","Collector","Ask for price","collector","OT"],
- ["IXO Models","Collector","Ask for price","collector","IXO"],
- ["GCD Models","Collector","Ask for price","collector","GCD"],
- ["BM Creations","Collector","Ask for price","collector","BM"],
- ["Para64","Collector","Ask for price","collector","P64"],
- ["MCE Models","Collector","Ask for price","collector","MCE"],
- ["Schuco Pro.R","Premium","Ask for price","premium","SPR"]
+const WHATSAPP_NUMBER="91XXXXXXXXXX";
+const brands=[
+["Hot Wheels","budget","₹167"],["Matchbox","budget","Ask for price"],["Majorette","budget","Ask for price"],["Bburago","collector","₹599"],["Maisto","collector","₹745"],["Mini GT","collector","₹1,149"],["Tarmac Works","collector","₹1,499"],["Pop Race","collector","Ask for price"],["INNO64","collector","₹1,949"],["Time Micro","collector","Ask for price"],["Era Car","collector","Ask for price"],["Tiny","budget","Ask for price"],["Tomica","budget","Ask for price"],["Greenlight","collector","Ask for price"],["Solido","collector","Ask for price"],["Welly","budget","Ask for price"],["Jada Toys","collector","Ask for price"],["M2 Machines","collector","Ask for price"],["AUTOart","premium","Ask for price"],["Kyosho","premium","Ask for price"],["CMC","premium","Ask for price"],["Minichamps","premium","Ask for price"],["LCD Models","premium","Ask for price"],["Schuco","premium","Ask for price"],["Norev","collector","Ask for price"],["Spark","premium","Ask for price"],["BBR Models","premium","Ask for price"],["GT Spirit","premium","Ask for price"],["Almost Real","premium","Ask for price"],["TSM Models","premium","Ask for price"],["KK-Scale","collector","Ask for price"],["OttOmobile","collector","Ask for price"],["IXO Models","collector","Ask for price"],["GCD Models","collector","Ask for price"],["BM Creations","collector","Ask for price"],["Para64","collector","Ask for price"],["MCE Models","collector","Ask for price"],["Schuco Pro.R","premium","Ask for price"]
 ];
-
-/* Each brand has its own image filename.
-   Add its AI-generated photo to the images folder later. */
-function imageFile(name){
- return "images/" + name.toLowerCase()
-  .replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") + ".webp";
+let category="all";
+const grid=document.getElementById("grid");
+function carSVG(color){
+return `<svg viewBox="0 0 240 100" aria-hidden="true"><ellipse cx="120" cy="84" rx="103" ry="9" fill="#000" opacity=".8"/><path d="M23 65 L36 51 Q48 46 69 44 L94 22 Q108 13 145 22 L176 45 Q199 48 211 59 L222 73 L218 82 L18 82 L15 72Z" fill="${color}" stroke="#ddd" stroke-opacity=".45" stroke-width="2"/><path d="M79 43 L100 25 Q113 18 143 25 L165 44Z" fill="#111923" stroke="#aaa" stroke-opacity=".5"/><path d="M26 63 L210 63" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><path d="M19 69 L45 69 M194 69 L220 69" stroke="#fff" stroke-width="5"/><circle cx="63" cy="78" r="17" fill="#080808" stroke="#777" stroke-width="4"/><circle cx="63" cy="78" r="6" fill="#bbb"/><circle cx="184" cy="78" r="17" fill="#080808" stroke="#777" stroke-width="4"/><circle cx="184" cy="78" r="6" fill="#bbb"/></svg>`;
 }
-
-const grid = document.getElementById("brandGrid");
-let currentFilter = "all";
-
-function renderBrands(){
- const query = document.getElementById("searchInput").value.toLowerCase().trim();
- const filtered = brands.filter(b =>
-  b[0].toLowerCase().includes(query) &&
-  (currentFilter === "all" || b[3] === currentFilter)
- );
-
- grid.innerHTML = "";
-
- if(!filtered.length){
-  grid.innerHTML = '<div class="no-results">No brands found. Try another search.</div>';
-  return;
- }
-
- filtered.forEach((b,index)=>{
-  const card = document.createElement("article");
-  card.className = "brand-card";
-  card.style.transitionDelay = (index % 8) * 45 + "ms";
-
-  const msg = "Hello F7TEEN! I am interested in the " + b[0] + " diecast collection. Please share availability and details.";
-  const wa = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
-
-  card.innerHTML = `
-   <div class="brand-image">
-    <div class="image-placeholder">${b[4]}<small>F7TEEN COLLECTION</small></div>
-    <img src="${imageFile(b[0])}" alt="${b[0]} miniature diecast model" loading="lazy">
-   </div>
-   <div class="brand-info">
-    <div class="brand-category">${b[1]} COLLECTION</div>
-    <h3>${b[0]}</h3>
-    <div class="brand-bottom">
-     <div class="price">STARTING FROM<strong>${b[2]}</strong></div>
-     <a class="enquire" href="${wa}" target="_blank" rel="noopener">ENQUIRE ↗</a>
-    </div>
-   </div>`;
-
-  const img = card.querySelector("img");
-  img.addEventListener("error",()=>img.style.display="none");
-  grid.appendChild(card);
-
-  requestAnimationFrame(()=>setTimeout(()=>card.classList.add("visible"),20));
- });
-}
-
-document.getElementById("searchInput").addEventListener("input",renderBrands);
-
-document.querySelectorAll(".filter").forEach(btn=>{
- btn.addEventListener("click",()=>{
-  document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
-  btn.classList.add("active");
-  currentFilter = btn.dataset.filter;
-  renderBrands();
- });
+const colors=["#df142a","#e9a21b","#1675b9","#d8d8d8","#208b55","#7d35b5","#c6a32a"];
+function render(){
+let q=document.getElementById("search").value.toLowerCase();
+let items=brands.filter(b=>b[0].toLowerCase().includes(q)&&(category==="all"||b[1]===category));
+grid.innerHTML=items.length?"":"<p style='color:#aaa;padding:30px'>No brands found.</p>";
+items.forEach((b,i)=>{
+let msg=encodeURIComponent("Hello F7TEEN! I am interested in "+b[0]+". Please share availability and details.");
+let link="https://wa.me/"+WHATSAPP_NUMBER+"?text="+msg;
+let c=document.createElement("article");c.className="card";
+c.style.transitionDelay=(i%10)*35+"ms";
+c.innerHTML=`<div class="visual"><div class="brandlogo">${b[0]}</div><div class="car">${carSVG(colors[i%colors.length])}</div></div><div class="info"><div class="type">${b[1].toUpperCase()} COLLECTION</div><h3>${b[0]}</h3><div class="bottom"><div class="price">STARTING FROM<b>${b[2]}</b></div><a class="enquire" href="${link}" target="_blank" rel="noopener">ENQUIRE ↗</a></div></div>`;
+grid.appendChild(c);requestAnimationFrame(()=>c.classList.add("show"));
 });
-
-function whatsappLink(message){
- return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 }
+document.getElementById("search").addEventListener("input",render);
+document.querySelectorAll(".filter").forEach(btn=>btn.onclick=()=>{
+document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+btn.classList.add("active");category=btn.dataset.cat;render();
+});
+const general="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent("Hello F7TEEN! I would like to enquire about your diecast collection.");
+document.getElementById("mainwa").href=general;document.getElementById("floatwa").href=general;
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
+document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+render();
+</script>
+</body>
+</html>
 
-document.getElementById("mainWhatsapp").href =
- whatsappLink("Hello F7TEEN! I would like to know more about your diecast collection.");
-document.getElementById("floatingWhatsapp").href =
- whatsappLink("Hello F7TEEN! I have a diecast collection enquiry.");
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-document.getElementByI
